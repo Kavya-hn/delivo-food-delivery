@@ -1,0 +1,132 @@
+/* menu.css - Precise Right-Side Image Alignment */
+
+:root {
+    --swiggy-orange: #fc8019;
+    --swiggy-green: #60b246;
+    --text-main: #3e4152;
+    --text-desc: #7e808c;
+    --white: #ffffff;
+    --border-divider: #e9e9eb;
+}
+
+body {
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    font-family: 'ProximaNova', Arial, sans-serif;
+}
+
+/* --- CONTAINER --- */
+.menu-list {
+    max-width: 800px; /* Centered narrow list like Swiggy */
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- THE MENU ROW --- */
+.menu-card {
+    display: flex; 
+    justify-content: space-between; /* Pushes text left, image right */
+    align-items: flex-start;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border-divider);
+    background: none;
+    position: relative; /* Context for the floating ADD button */
+}
+
+.menu-card:last-child {
+    border-bottom: none;
+}
+
+/* --- LEFT SIDE: ITEM DETAILS --- */
+.menu-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin: 0 0 4px 0;
+    width: 65%; /* Ensures text never overlaps the image */
+}
+
+.menu-card p {
+    margin: 0;
+    width: 65%;
+}
+
+/* Price Styling */
+.menu-card p strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+/* Description Alignment */
+.menu-card p:nth-of-type(1) {
+    font-size: 0.9rem;
+    color: var(--text-desc);
+    line-height: 1.4;
+    margin-top: 8px;
+}
+
+/* Rating / Metadata */
+.menu-card p:last-of-type {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--swiggy-orange);
+    margin-top: 12px;
+}
+
+/* --- RIGHT SIDE: IMAGE & BUTTON --- */
+.menu-img {
+    width: 156px;
+    height: 144px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-left: 20px; /* Pushes it away from text */
+}
+
+/* Floating ADD Button over the image */
+.menu-card form {
+    position: absolute;
+    right: 28px; /* Centers button relative to the 156px image width */
+    bottom: 20px; /* Hangs over the bottom edge of the image */
+    width: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-card .add-btn {
+    background-color: var(--white);
+    color: var(--swiggy-green);
+    padding: 8px 0;
+    width: 100%;
+    border: 1px solid #d4d5d9;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.menu-card .add-btn:hover {
+    background-color: #f9f9f9;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    .menu-card h3, .menu-card p {
+        width: 55%;
+    }
+    .menu-img {
+        width: 120px;
+        height: 100px;
+    }
+    .menu-card form {
+        width: 80px;
+        right: 20px;
+    }
+}

@@ -1,0 +1,157 @@
+/* profile.css - Authentic Swiggy Account Dashboard */
+
+:root {
+    --swiggy-orange: #fc8019;
+    --text-main: #282c3f;
+    --text-muted: #7e808c;
+    --white: #ffffff;
+    --bg-gray: #f4f4f5;
+    --border-light: #d4d5d9;
+}
+
+body {
+    background-color: var(--white); /* Swiggy profile is high-contrast white */
+    margin: 0;
+}
+
+.profile-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    display: flex;
+    gap: 50px;
+    padding: 0 20px;
+}
+
+/* --- SIDEBAR --- */
+.profile-sidebar {
+    width: 250px;
+}
+
+.side-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li {
+    padding: 18px 25px;
+    margin-bottom: 5px;
+}
+
+.side-menu li a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.side-menu li.active {
+    background: #e9e9eb;
+    border-left: 4px solid var(--text-main);
+}
+
+/* --- MAIN CONTENT --- */
+.profile-content {
+    flex: 1;
+}
+
+.content-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.content-header p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+/* --- SUCCESS BANNER --- */
+.success-banner {
+    background: #e7f5e4;
+    color: #60b246;
+    padding: 15px;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
+
+/* --- SWIGGY FLOATING LABEL FORM --- */
+.swiggy-form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.input-group {
+    position: relative;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.input-group input, 
+.input-group textarea {
+    width: 100%;
+    border: none;
+    padding: 10px 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-main);
+    background: transparent;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: var(--text-muted);
+    font-size: 15px;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+/* When input is focused or has content, label moves up */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:empty) ~ label {
+    top: -15px;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-bottom: 1.5px solid var(--text-main);
+}
+
+/* --- THE SAVE BUTTON --- */
+.save-btn {
+    width: 200px;
+    background: var(--swiggy-orange);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 4px 14px rgba(252, 128, 25, 0.3);
+    transition: 0.3s;
+}
+
+.save-btn:hover {
+    background: #e67316;
+    transform: translateY(-2px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .profile-container { flex-direction: column; margin: 30px auto; }
+    .profile-sidebar { display: none; }
+    .save-btn { width: 100%; }
+}

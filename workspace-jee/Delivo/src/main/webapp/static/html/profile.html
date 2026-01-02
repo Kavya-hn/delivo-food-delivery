@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivo Profile</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Delivo</h1>
+        </div>
+        <nav>
+            <a href="restaurant.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cart.html">Cart</a>
+            <a href="orderhistory.html">Orders</a>
+            <a href="signin.html">Sign Out</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Your Profile</h2>
+    </section>
+
+    <section class="profile-section">
+        <div class="profile-container">
+            <h3>Profile Details</h3>
+            <form class="profile-form">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" value="John Doe" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="john@example.com" required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" value="+91 9876543210" required>
+
+                <button type="submit" class="update-btn">Update Profile</button>
+            </form>
+
+            <div class="profile-links">
+                <a href="orderhistory.html" class="orders-btn">View Order History</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Delivo | All Rights Reserved
+    </footer>
+</body>
+</html>

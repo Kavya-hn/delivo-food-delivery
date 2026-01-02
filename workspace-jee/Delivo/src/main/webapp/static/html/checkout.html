@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivo Checkout</title>
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Delivo</h1>
+        </div>
+        <nav>
+            <a href="restaurant.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cart.html">Cart</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Checkout</h2>
+    </section>
+
+    <section class="checkout-section">
+        <h2>Delivery & Payment Details</h2>
+        <div class="checkout-container">
+            <form class="checkout-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="payment">Payment Method</label>
+                <select id="payment" name="payment" required>
+                    <option value="cod">Cash on Delivery</option>
+                    <option value="card">Credit/Debit Card</option>
+                    <option value="upi">UPI</option>
+                </select>
+
+                <button type="submit" class="place-order-btn">Place Order</button>
+            </form>
+
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <ul>
+                    <li>Masala Dosa x1 - ₹120</li>
+                    <li>Paneer Tikka x2 - ₹300</li>
+                    <li><strong>Total: ₹420</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Delivo | All Rights Reserved
+    </footer>
+</body>
+</html>

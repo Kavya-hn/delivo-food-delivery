@@ -1,0 +1,165 @@
+/* success.css - Premium Swiggy Animations */
+
+:root {
+    --swiggy-green: #60b246;
+    --swiggy-orange: #fc8019;
+    --swiggy-dark: #282c3f;
+    --swiggy-muted: #686b78;
+}
+
+.success-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f7f6;
+    font-family: 'ProximaNova', 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.success-card {
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(40, 44, 63, 0.15);
+    width: 90%;
+    max-width: 420px;
+    /* Entrance Animation */
+    animation: popUp 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+
+@keyframes popUp {
+    0% { transform: translateY(40px) scale(0.9); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* --- THE "X" BUTTON --- */
+.close-x {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 32px;
+    font-weight: 200;
+    color: var(--swiggy-muted);
+    text-decoration: none;
+    line-height: 1;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.close-x:hover {
+    color: #000;
+    transform: rotate(90deg);
+    opacity: 1;
+}
+
+/* --- ICON ANIMATION --- */
+.success-icon {
+    width: 75px;
+    height: 75px;
+    background-color: var(--swiggy-green);
+    color: white;
+    font-size: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    position: relative;
+    z-index: 2;
+    /* Bouncy Icon Pop */
+    animation: iconPop 0.6s 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    box-shadow: 0 10px 20px rgba(96, 178, 70, 0.3);
+}
+
+/* Adding a subtle pulse ring around the icon */
+.success-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--swiggy-green);
+    z-index: -1;
+    animation: pulse 2s infinite ease-out;
+}
+
+@keyframes iconPop {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* --- TEXT ANIMATIONS --- */
+h1 {
+    font-size: 2.2rem;
+    color: var(--swiggy-dark);
+    margin-bottom: 10px;
+    font-weight: 800;
+    /* Staggered text reveal */
+    animation: fadeInUp 0.5s 0.6s both;
+}
+
+p {
+    color: var(--swiggy-muted);
+    margin-bottom: 8px;
+    font-size: 16px;
+    animation: fadeInUp 0.5s 0.7s both;
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(15px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- BUTTONS --- */
+.button-group {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 25px;
+    background-color: var(--swiggy-orange);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: fadeInUp 0.5s 0.9s both;
+    box-shadow: 0 4px 14px rgba(252, 128, 25, 0.3);
+}
+
+.btn:hover {
+    background-color: #e67316;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(252, 128, 25, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--swiggy-dark);
+    box-shadow: 0 4px 14px rgba(40, 44, 63, 0.2);
+    animation-delay: 0.8s; /* Appears slightly before the home button */
+}
+
+.btn-secondary:hover {
+    background-color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}

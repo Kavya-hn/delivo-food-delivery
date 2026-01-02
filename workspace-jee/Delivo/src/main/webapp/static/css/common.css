@@ -1,0 +1,167 @@
+/* common.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #e53935;
+    --secondary-color: #fdd835;
+    --text-color-dark: #333333;
+    --text-color-light: #ffffff;
+    --background-light: #f4f7f6;
+    --card-background: #ffffff;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    /* FIX: Ensure footer stays at the bottom without breaking layout */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    width: 100%; 
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    max-width: 1300px; 
+    margin: 0 auto;
+}
+
+.logo-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+/* FIX: Restore your specific logo image styling */
+.logo-box img {
+    height: 45px; 
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-box h1 {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all var(--transition-speed);
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    background-color: rgba(229, 57, 53, 0.05);
+    color: var(--primary-color);
+}
+
+/* --- BANNER / VIDEO ALIGNMENT --- */
+/* FIX: Added proper container to ensure video aligns with your page margins */
+.banner-video-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.banner-video {
+    width: 100%;
+    /* You can adjust this height to your original preference */
+    height: 400px; 
+    object-fit: cover; 
+    display: block;
+}
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 8px;
+    background-color: var(--primary-color);
+    color: var(--text-color-light) !important; 
+    font-weight: 600;
+    text-transform: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(229, 57, 53, 0.2);
+}
+
+.btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(229, 57, 53, 0.3);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--text-color-dark);
+    color: #e0e0e0;
+    margin-top: auto; /* Keeps footer at bottom of short pages */
+    width: 100%;
+}
+
+/* --- RESPONSIVE FIX --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .logo-box img {
+        height: 35px;
+    }
+
+    .nav-links {
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-links a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .banner-video {
+        height: 250px;
+    }
+}

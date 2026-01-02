@@ -1,0 +1,180 @@
+/* cart.css - Premium Swiggy-Inspired Theme */
+
+:root {
+    --swiggy-orange: #fc8019;
+    --swiggy-green: #60b246;
+    --text-main: #282c3f;
+    --text-muted: #686b78;
+    --bg-light: #e9ecee;
+    --white: #ffffff;
+    --border-color: #d4d5d9;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    font-family: 'ProximaNova', Arial, Helvetica, sans-serif;
+}
+
+/* Section Containers */
+.cart-section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.cart-section h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+/* Premium Table Styling */
+.cart-table {
+    width: 100%;
+    background: var(--white);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden; /* Ensures corners are rounded */
+}
+
+.cart-table th {
+    background: #f9f9f9;
+    padding: 20px;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cart-table td {
+    padding: 24px 20px;
+    border-bottom: 1px solid #f1f1f6;
+    vertical-align: middle;
+}
+
+/* Image and Name Grouping */
+.cart-table td img {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-right: 15px;
+}
+
+.cart-table td strong {
+    font-size: 16px;
+    color: var(--text-main);
+    display: block;
+}
+
+/* Forms inside table (Qty & Action) */
+.cart-table form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cart-table input[type="number"] {
+    border: 1px solid var(--border-color);
+    padding: 5px 8px;
+    border-radius: 4px;
+    outline: none;
+    font-weight: 600;
+}
+
+.cart-table button {
+    background: none;
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.cart-table button[type="submit"]:hover {
+    border-color: var(--swiggy-orange);
+    color: var(--swiggy-orange);
+}
+
+/* Grand Total Row */
+.cart-table tr:last-child td {
+    border-bottom: none;
+    background: #fafbfc;
+    padding: 30px 20px;
+}
+
+.cart-table tr:last-child strong {
+    font-size: 18px;
+    color: var(--text-main);
+}
+
+/* Button Container (Footer) */
+.cart-button-container {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between; /* Spreads buttons across the row */
+    align-items: center;
+}
+
+/* Buttons */
+.order-more-link {
+    text-decoration: none;
+    color: var(--swiggy-orange);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 24px;
+    border: 1.5px solid var(--swiggy-orange);
+    border-radius: 4px;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.order-more-link:hover {
+    background-color: var(--swiggy-orange);
+    color: var(--white);
+}
+
+.checkout-btn {
+    background-color: var(--swiggy-green);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 15px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.checkout-btn:hover {
+    background-color: #509a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(96, 178, 70, 0.3);
+}
+
+.clear-btn {
+    background: #f1f1f6;
+    color: var(--text-muted);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.clear-btn:hover {
+    background: #e2e2e7;
+    color: #000;
+}

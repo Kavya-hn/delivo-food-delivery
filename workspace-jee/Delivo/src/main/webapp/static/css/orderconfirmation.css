@@ -1,0 +1,218 @@
+/* orderconfirmation.css - Premium Swiggy Inspired Theme */
+
+:root {
+    --swiggy-green: #60b246;
+    --swiggy-orange: #fc8019;
+    --text-main: #282c3f;
+    --text-muted: #7e808c;
+    --bg-light: #e9ecee;
+    --white: #ffffff;
+    --shadow-premium: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    font-family: 'ProximaNova', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.confirmation-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* --- SUCCESS HEADER CARD --- */
+.status-header-card {
+    background: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    border-radius: 0px;
+    box-shadow: var(--shadow-premium);
+    margin-bottom: 30px;
+}
+
+.success-animation {
+    width: 80px;
+    height: 80px;
+    background: #f1f8ee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.check-icon {
+    font-size: 40px;
+    color: var(--swiggy-green);
+    font-weight: bold;
+}
+
+.status-header-card h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--swiggy-green);
+    margin: 0;
+}
+
+.order-id-label {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 10px 0 25px 0;
+}
+
+.order-id-label span {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.eta-pill {
+    display: inline-flex;
+    align-items: center;
+    background: #282c3f;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 0px;
+    gap: 12px;
+}
+
+.eta-pill p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* --- 2-COLUMN DASHBOARD --- */
+.order-info-grid {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.info-column {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bill-column {
+    flex: 1;
+}
+
+.info-card, .bill-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 0px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.section-label {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 1.2px;
+    margin-bottom: 18px;
+}
+
+.res-name {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.status-badge {
+    display: inline-block;
+    background: #f1f1f6;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+.details-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.details-row:last-of-type {
+    border-bottom: none;
+}
+
+.details-row .label { color: var(--text-muted); font-size: 14px; }
+.details-row .value { font-weight: 600; font-size: 14px; }
+
+/* --- BILL BREAKDOWN --- */
+.item-summary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-summary-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.bill-divider {
+    border-top: 1px dashed #d4d5d9;
+    margin: 15px 0;
+}
+
+.final-payable {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--text-main);
+    padding-top: 5px;
+}
+
+/* --- ACTIONS --- */
+.action-footer {
+    margin-top: 10px;
+}
+
+.track-order-btn {
+    display: block;
+    background: var(--swiggy-green);
+    color: #fff;
+    text-align: center;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+}
+
+.track-order-btn:hover {
+    background: #509a3a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(96, 178, 70, 0.2);
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 850px) {
+    .order-info-grid {
+        flex-direction: column;
+    }
+    .bill-column {
+        width: 100%;
+    }
+    .status-header-card {
+        padding: 40px 20px;
+    }
+}

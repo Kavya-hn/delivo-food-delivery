@@ -1,0 +1,273 @@
+/* restaurant.css - Final Premium Swiggy Layout */
+
+:root {
+    --swiggy-orange: #fc8019;
+    --swiggy-green: #48c479;
+    --text-main: #282c3f;
+    --text-muted: #686b78;
+    --white: #ffffff;
+    --border-light: #e9e9eb;
+}
+
+body {
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+    font-family: 'ProximaNova', Arial, sans-serif;
+    color: var(--text-main);
+}
+
+/* --- BANNER VIDEO SECTION --- */
+.banner-video-container {
+    width: 100%;
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.banner-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55);
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    z-index: 10;
+}
+
+.banner-overlay h1 {
+    color: #ffffff;
+    font-size: 2.8rem; /* Matches the smaller search bar */
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+/* --- COMPACT SEARCH BAR --- */
+.video-search-bar {
+    display: flex;
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.video-search-bar input {
+    flex: 1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    outline: none;
+    color: var(--text-main);
+    background: transparent;
+}
+
+.search-submit-btn {
+    background-color: var(--swiggy-orange);
+    color: white;
+    border: none;
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.search-submit-btn:hover {
+    background-color: #e67316;
+}
+
+/* --- MAIN GRID LAYOUT --- */
+.main-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.section-title h2 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--text-main);
+}
+
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background: var(--swiggy-orange);
+    margin-bottom: 40px;
+}
+
+.restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+/* --- RESTAURANT CARD & TEXT STYLING --- */
+.restaurant-card {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease-in-out;
+}
+
+.restaurant-card:hover {
+    transform: scale(0.96); /* The signature Swiggy shrink effect */
+}
+
+.img-container {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.restaurant-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Restaurant Card Refinement */
+.restaurant-card {
+    border: none;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover {
+    transform: scale(0.95); /* Swiggy's signature "shrink-on-hover" */
+}
+
+.restaurant-img {
+    border-radius: 16px; /* Swiggy's modern rounded look */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+
+.res-info h3 {
+    font-size: 18px;
+    margin-top: 12px;
+    color: #282c3f;
+}
+
+.res-info .cuisine {
+    color: #686b78;
+    font-size: 14px;
+}
+
+.res-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.rating-badge {
+    background-color: #48c479; /* Brighter Swiggy Green */
+    color: white;
+    padding: 2px 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+/* Restaurant Details Section */
+.res-details {
+    padding: 2px 4px;
+}
+
+.res-details h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-main);
+    /* Prevent text wrap for long names */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cuisine {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 4px 0 10px 0;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Meta Row (Rating and Time) */
+.res-meta {
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.rating-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--swiggy-green);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 12px;
+}
+
+/* Swiggy uses bold text for ETA with specific spacing */
+.eta {
+    color: #535665;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+}
+
+/* Optional: Adding the button styling in case you still use it inside the card */
+.restaurant-card .btn {
+    display: block;
+    margin-top: 15px;
+    background-color: var(--swiggy-orange);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1100px) {
+    .restaurant-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .banner-video-container { height: 350px; }
+    .banner-overlay h1 { font-size: 2rem; }
+    .restaurant-list { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurant-list { grid-template-columns: 1fr; }
+}

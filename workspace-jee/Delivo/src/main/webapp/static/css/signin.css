@@ -1,0 +1,185 @@
+/* =================================================
+   SIGN IN PAGE – FULL CSS (VIDEO BACKGROUND)
+   ================================================= */
+
+/* ---------- BASE RESET FOR AUTH PAGE ---------- */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* IMPORTANT: isolate from common.css */
+body.auth-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+/* ---------- VIDEO BACKGROUND ---------- */
+.video-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark overlay for contrast */
+.video-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+
+/* ---------- AUTH CARD ---------- */
+.auth-box {
+    position: fixed;          /* 🔑 ignores all parent layout */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    max-width: 380px;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+
+    border-radius: 20px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.35);
+
+    z-index: 10;
+}
+
+
+/* ---------- TITLE ---------- */
+.auth-box h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/* ---------- FORM ---------- */
+.auth-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+/* ---------- INPUTS ---------- */
+.auth-box input {
+    width: 100%;
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    font-size: 1rem;
+    color: var(--text-color-dark);
+    background-color: var(--background-light);
+
+    box-shadow:
+        inset 3px 3px 6px rgba(0, 0, 0, 0.12),
+        inset -3px -3px 6px rgba(255, 255, 255, 0.8);
+
+    transition: box-shadow 0.3s ease;
+}
+
+.auth-box input:focus {
+    outline: none;
+    box-shadow:
+        inset 1px 1px 3px rgba(0, 0, 0, 0.15),
+        inset -1px -1px 3px rgba(255, 255, 255, 0.6),
+        0 0 0 3px rgba(44, 123, 229, 0.35);
+}
+
+
+/* ---------- BUTTON ---------- */
+.auth-box button[type="submit"] {
+    padding: 15px 25px;
+    margin-top: 10px;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    color: var(--text-color-light);
+    background-color: var(--primary-color);
+
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.25);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease;
+}
+
+.auth-box button[type="submit"]:hover {
+    background-color: #2067c2;
+    transform: translateY(-3px);
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.35);
+}
+
+.auth-box button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow:
+        inset 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ---------- SIGNUP LINK ---------- */
+.auth-box p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.auth-box p a {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 500px) {
+    .auth-box {
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    .auth-box h2 {
+        font-size: 1.8rem;
+    }
+}
