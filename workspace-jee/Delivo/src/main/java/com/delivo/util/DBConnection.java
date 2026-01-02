@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 
 public class DBConnection {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/delivo_db";
-    private static final String USER = "root";
-    private static final String PASSWORD = "root"; // or your MySQL password
+    private static final String URL = "jdbc:mysql://localhost:3306/your_db";
+    private static final String USER = "your_username";
+    private static final String PASSWORD = "your_password"; // or your MySQL password
 
     static {
         try {
